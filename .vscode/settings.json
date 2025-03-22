@@ -1,0 +1,13 @@
+{
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "editor.formatOnSave": true,
+    "clangd.enable": true,
+    "clangd.arguments": [
+        "--compile-commands-dir=build",
+        "--background-index",
+    ],
+    "cmake.generator": "Ninja",
+    "cmake.configureArgs": [
+        "--toolchain cmake/arm-none-eabi-toolchain.cmake",
+    ],
+}

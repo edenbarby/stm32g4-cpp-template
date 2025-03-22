@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // {
+        //     "type": "cortex-debug",
+        //     "name": "Flash and Debug",
+        //     "request": "launch",
+        //     "executable": "${command:cmake.launchTargetPath}",
+        //     "preLaunchTask": "CMake: build",
+        //     "servertype": "bmp",
+        //     "svdFile": "${workspaceFolder}/pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
+        //     "runToEntryPoint": "main",
+        //     "BMPGDBSerialPort": "/dev/serial/by-id/usb-Black_Magic_Debug_Black_Magic_Probe__ST-Link_v2__v1.10.0-8-g3099c7f1-dirty_0676FF535155878281043432-if00",
+        // },
+        // {
+        //     "type": "cortex-debug",
+        //     "name": "Debug",
+        //     "request": "attach",
+        //     "executable": "${command:cmake.launchTargetPath}",
+        //     "preLaunchTask": "CMake: build",
+        //     "servertype": "bmp",
+        //     "svdFile": "${workspaceFolder}/pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
+        //     "runToEntryPoint": "main",
+        //     "BMPGDBSerialPort": "/dev/serial/by-id/usb-Black_Magic_Debug_Black_Magic_Probe__ST-Link_v2__v1.10.0-8-g3099c7f1-dirty_0676FF535155878281043432-if00",
+        // }
+    ]
+}
