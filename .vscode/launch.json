@@ -1,6 +1,27 @@
 {
     "version": "0.2.0",
     "configurations": [
+        {
+            "type": "cortex-debug",
+            "name": "Flash and Debug",
+            "request": "launch",
+            "executable": "${command:cmake.launchTargetPath}",
+            "preLaunchTask": "CMake: build",
+            "servertype": "openocd",
+            "interface": "swd",
+            "device": "STM32G431CB",
+            "svdFile": "${workspaceFolder}/stm32g431.svd",
+            "runToEntryPoint": "Reset_Handler",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32g4x.cfg",
+            ],
+            // "openOCDLaunchCommands": [
+            //     ""
+            // ]
+            // "openOCDLaunchCommands": [
+            // ]
+        }
         // {
         //     "type": "cortex-debug",
         //     "name": "Flash and Debug",

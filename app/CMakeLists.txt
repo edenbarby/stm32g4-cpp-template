@@ -1,20 +1,20 @@
 project(example_app C CXX ASM)
 
-add_executable(
-    example_app
+set_property(SOURCE startup_stm32g431xx.s APPEND PROPERTY COMPILE_OPTIONS "-x" "assembler-with-cpp")
+
+add_executable(example_app
     main.cpp
     syscalls.cpp
-    startup.cpp
+    # startup.cpp
+    startup_stm32g431xx.s
 )
 
-target_compile_definitions(
-    example_app
+target_compile_definitions(example_app
     PRIVATE
     "STM32G431xx"
 )
 
-target_compile_options(
-    example_app
+target_compile_options(example_app
     PRIVATE
     "-Wall"
     "-Wextra"
@@ -22,8 +22,6 @@ target_compile_options(
     "-Wundef"
     "-Wshadow"
     "-Wredundant-decls"
-    "-Wmissing-prototypes"
-    "-Wstrict-prototypes"
     "-Wformat=2"
     "-Wformat-truncation"
     "-Wdouble-promotion"
@@ -40,25 +38,27 @@ target_compile_options(
 
 # -Wall -Wextra -Werror -Wshadow -Wdouble-promotion -Wformat=2 -Wstrict-prototypes -Wno-unused-parameter
 
-target_link_options(
-    example_app
+target_link_options(example_app
     PRIVATE
     "-T${CMAKE_CURRENT_SOURCE_DIR}/stm32g431cb.ld"
     "-specs=nosys.specs"
     "-Wl,-gc-sections"
     "-Wl,-Map=output.map"
+    "-Wl,--print-memory-usage"
 )
 
-set_target_properties(
-    example_app
+set_target_properties(example_app
     PROPERTIES 
     LINK_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/stm32g431cb.ld"
 )
 
-# target_link_libraries(
-#     example_app
-# )
+target_link_libraries(example_app
+    cmsis
+    cmsis-device
+    CMSISDSP
+    hal
+)
 
 
 

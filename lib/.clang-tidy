@@ -1,0 +1,2 @@
+# Disable all clang-tidy checks in external libraries.
+Checks: "-*"

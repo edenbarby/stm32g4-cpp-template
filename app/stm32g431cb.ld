@@ -1,4 +1,4 @@
-ENTRY(reset_handler)
+ENTRY(Reset_Handler)
 
 /* Put stack right at the end of RAM. */
 _estack = ORIGIN(RAM) + LENGTH(RAM);
@@ -39,7 +39,7 @@ SECTIONS
         _etext = .;
     }> FLASH
 
-    _la_data = LOADADDR(.data);
+    _sidata = LOADADDR(.data);
 
     .data :
     {

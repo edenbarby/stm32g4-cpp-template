@@ -1,0 +1,8 @@
+Checks:
+  - "*"  # Enable all checks by default.
+  - "-llvmlibc-*" # And remove noisy/unhelpful checks explicitly.
+  - "-fuchsia-*"
+  - "-altera-*"
+  - "-bugprone-easily-swappable-parameters"
+  - "-readability-identifier-length"
+  - "-modernize-use-trailing-return-type"

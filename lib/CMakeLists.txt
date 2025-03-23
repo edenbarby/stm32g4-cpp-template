@@ -1,6 +1,8 @@
-# CMSIS 6 library
+add_subdirectory(cmsis)
 
-# CMSIS DSP library
+add_subdirectory(cmsis-device)
+
+set(CMSISCORE ${CMAKE_CURRENT_SOURCE_DIR}/cmsis/CMSIS_6/CMSIS/Core)
 add_subdirectory(CMSIS-DSP)
 
-# STM32G4 HAL library
+add_subdirectory(hal)

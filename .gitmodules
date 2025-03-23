@@ -1,9 +1,12 @@
 [submodule "lib/CMSIS-DSP"]
 	path = lib/CMSIS-DSP
 	url = https://github.com/ARM-software/CMSIS-DSP.git
-[submodule "lib/stm32g4xx-hal-driver"]
-	path = lib/stm32g4xx-hal-driver
+[submodule "lib/hal/stm32g4xx-hal-driver"]
+	path = lib/hal/stm32g4xx-hal-driver
 	url = https://github.com/STMicroelectronics/stm32g4xx-hal-driver.git
-[submodule "lib/CMSIS_6"]
-	path = lib/CMSIS_6
+[submodule "lib/cmsis/CMSIS_6"]
+	path = lib/cmsis/CMSIS_6
 	url = https://github.com/ARM-software/CMSIS_6.git
+[submodule "lib/cmsis-device/cmsis-device-g4"]
+	path = lib/cmsis-device/cmsis-device-g4
+	url = https://github.com/STMicroelectronics/cmsis-device-g4.git
