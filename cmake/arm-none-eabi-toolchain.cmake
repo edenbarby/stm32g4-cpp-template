@@ -26,3 +26,5 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcpu=cortex-m4 -mthumb -mfloat-abi=hard
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
 add_compile_definitions(STM32G431xx)
+add_compile_definitions(USE_FULL_LL_DRIVER)
+add_compile_definitions(__CHECK_DEVICE_DEFINES)
