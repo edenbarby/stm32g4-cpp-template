@@ -5,9 +5,11 @@
     "clangd.arguments": [
         "--compile-commands-dir=build",
         "--background-index",
+        "--query-driver=/home/eden.barby/Downloads/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-g++",
     ],
     "cmake.generator": "Ninja",
     "cmake.configureArgs": [
         "--toolchain cmake/arm-none-eabi-toolchain.cmake",
     ],
+    "cortex-debug.armToolchainPath": "/home/eden.barby/Downloads/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin",
 }

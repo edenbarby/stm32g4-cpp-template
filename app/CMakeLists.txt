@@ -1,12 +1,11 @@
 project(example_app C CXX ASM)
 
-set_property(SOURCE startup_stm32g431xx.s APPEND PROPERTY COMPILE_OPTIONS "-x" "assembler-with-cpp")
+set_property(SOURCE "startup_stm32g431xx.s" APPEND PROPERTY COMPILE_OPTIONS "-x" "assembler-with-cpp")
 
 add_executable(example_app
-    main.cpp
-    syscalls.cpp
-    # startup.cpp
-    startup_stm32g431xx.s
+    "main.cpp"
+    "syscalls.cpp"
+    "startup_stm32g431xx.s"
 )
 
 target_compile_definitions(example_app
@@ -28,7 +27,7 @@ target_compile_options(example_app
     "-fstack-usage"
     "-Wstack-usage=1024"
     "-Wconversion"
-    # "-Werror"
+    "-Werror"
     "-fno-common"
     "-ffunction-sections"
     "-fdata-sections"
@@ -36,12 +35,11 @@ target_compile_options(example_app
     "-fno-rtti"
 )
 
-# -Wall -Wextra -Werror -Wshadow -Wdouble-promotion -Wformat=2 -Wstrict-prototypes -Wno-unused-parameter
-
 target_link_options(example_app
     PRIVATE
     "-T${CMAKE_CURRENT_SOURCE_DIR}/stm32g431cb.ld"
     "-specs=nosys.specs"
+    "-specs=nano.specs"
     "-Wl,-gc-sections"
     "-Wl,-Map=output.map"
     "-Wl,--print-memory-usage"
@@ -59,33 +57,3 @@ target_link_libraries(example_app
     CMSISDSP
     hal
 )
-
-
-
-
-
-# -fstack-usage and -fcyclomatic-complexity, warnings like -Wall
-# -Werror -Wextra
-#     -std=gnu11: selects C11 standard with GNU extensions
-# -ffunction-sections: places each function into its own section
-# -fdata-sections: places each data into its own section
-# -Wl,--gc-sections
-# -Wshadow
-# -Wdouble-promotion
-
-# -Wformat=2 & -Wformat-truncation
-# -Wundef
-# -fno-common
-# -fstack-usage & -Wstack-usage=1024
-# -Wconversion
-
-# -g3
-
-# -Wl,-Map=output.map
-
-# STM32G431CB
-# add this define for stm32 hal STM32G431xx
-
-#CFLAGS		+= -Wall -Wextra -Wundef -Wshadow -Wredundant-decls -Wmissing-prototypes -Wstrict-prototypes
-#CXXFLAGS	+= -Wall -Wextra -Wundef -Wshadow -Wredundant-decls -Weffc++ -Werror
-# -fno-exceptions -fno-rtti

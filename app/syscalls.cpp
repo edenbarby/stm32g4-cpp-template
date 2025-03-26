@@ -1,19 +1,19 @@
 extern "C"
 {
-    void _exit(int)
-    {
-        while (true)
-        {
-        }
-    }
+    // void _exit(int)
+    // {
+    //     while (true)
+    //     {
+    //     }
+    // }
 
-    void* _sbrk(int)
-    {
-        while (true)
-        {
-        }
-        return nullptr;
-    }
+    // void* _sbrk(int)
+    // {
+    //     while (true)
+    //     {
+    //     }
+    //     return nullptr;
+    // }
 
     // int _fstat(int, struct stat*)
     // {
@@ -23,13 +23,13 @@ extern "C"
     //     return 0;
     // }
 
-    int _isatty(int)
-    {
-        while (true)
-        {
-        }
-        return 0;
-    }
+    // int _isatty(int)
+    // {
+    //     while (true)
+    //     {
+    //     }
+    //     return 0;
+    // }
 
     int _lseek(int, int, int)
     {

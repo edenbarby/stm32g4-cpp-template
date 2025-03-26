@@ -1,12 +1,14 @@
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR ARM)
 
-set(CMAKE_C_COMPILER arm-none-eabi-gcc)
-set(CMAKE_CXX_COMPILER arm-none-eabi-g++)
-set(CMAKE_ASM_COMPILER arm-none-eabi-gcc)
+set(ARM_GCC_CROSSCOMPILED_TOOLCHAIN_DIR "/home/eden.barby/Downloads/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi")
+
+# set(CMAKE_C_COMPILER ${ARM_GCC_CROSSCOMPILED_TOOLCHAIN_DIR}/arm-none-eabi-gcc)
+# set(CMAKE_CXX_COMPILER ${ARM_GCC_CROSSCOMPILED_TOOLCHAIN_DIR}/arm-none-eabi-g++)
+# set(CMAKE_ASM_COMPILER ${ARM_GCC_CROSSCOMPILED_TOOLCHAIN_DIR}/arm-none-eabi-gcc)
 
 # The ARM cross compiler toolchain location.
-set(CMAKE_FIND_ROOT_PATH /home/eden/Downloads/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi)
+set(CMAKE_FIND_ROOT_PATH ${ARM_GCC_CROSSCOMPILED_TOOLCHAIN_DIR}/arm-none-eabi)
 
 # Calls to find_program() will not use CMAKE_FIND_ROOT_PATH and will only
 # search system directories instead.
@@ -27,4 +29,3 @@ set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
 add_compile_definitions(STM32G431xx)
 add_compile_definitions(USE_FULL_LL_DRIVER)
-add_compile_definitions(__CHECK_DEVICE_DEFINES)

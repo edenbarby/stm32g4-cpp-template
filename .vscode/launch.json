@@ -11,7 +11,8 @@
             "interface": "swd",
             "device": "STM32G431CB",
             "svdFile": "${workspaceFolder}/stm32g431.svd",
-            "runToEntryPoint": "Reset_Handler",
+            // "runToEntryPoint": "Reset_Handler",
+            "runToEntryPoint": "main",
             "configFiles": [
                 "interface/stlink.cfg",
                 "target/stm32g4x.cfg",
